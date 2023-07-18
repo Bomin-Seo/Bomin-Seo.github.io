@@ -95,3 +95,15 @@ tags :
 - 논문에서는 각각의 style 정보를 localize하기 위해 mixing regularization방법을 제안합니다.
 - 2개의 입력벡터 $$\omega_1 , \omega_2$$가 있을 때 먼저 $$\omega_1$$를 이용하여 latent code를 구성하고, cross point이후에는 $$\omega_2$$를 이용하여 latent code를 구성합니다.
 - 구성된 latent code를 통해 생성된 이미지를 training dataset에 포함시키면 Discriminator는 생성된 이미지에 대해 허구의 이미지라고 판단하게 됩니다. 이에 따라 generator는 latene code상의 crosspoint 지점의 style정보는 낮은 correlation을 가진다고 판단하게 됩니다.
+
+### Disentanglement studies
+#### Perceptual path length
+- 2개의 vector를 interpolation할 때 disentangle되어 있다면 feature를 변화시킬때 부드럽게 변화하여야합니다.
+- 논문에서는 2개의 벡터를 학습된 VGG16에 통과시켜 두 벡터 간의 차이를 계산합니다.
+- 이 때 latent vector z와 intermediate latent space $$\omega$$에 대한 비교를 수행하는데
+<p align='center'><img src = "https://github.com/Bomin-Seo/Bomin-Seo.github.io/assets/94039896/601dc203-c6f6-45c2-b6b8-8c7e042a62a6" height="80%" width = "80%"/></p>
+- latent space z는 구면선형보간법을
+<p align='center'><img src = "https://github.com/Bomin-Seo/Bomin-Seo.github.io/assets/94039896/8bcb4f0a-850c-46fd-8ab9-dd089663b232" height="80%" width = "80%"/></p>
+- intermediate latent space $$\omega$$에 대해서는 선형 보간법으로 계산합니다.
+- 임의의 지점 t와 근접한 지점 $$t + \epsilon$$
+#### Linear separabilit
