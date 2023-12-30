@@ -14,7 +14,6 @@ tags :
 
  <https://arxiv.org/pdf/1812.04948.pdf>
 
-
 ### Introduction
  - styleGAN은 PGGAN에서 발전된 형태로, 특징을 제어할 수 없는 PGGAN의 문제점을 개선합니다.
  - NVIDIA에서는 styleGAN과 더불어 FFHQ Dataset을 함께 공개하였습니다.
@@ -104,6 +103,13 @@ tags :
 <p align='center'><img src = "https://github.com/Bomin-Seo/Bomin-Seo.github.io/assets/94039896/601dc203-c6f6-45c2-b6b8-8c7e042a62a6" height="80%" width = "80%"/></p>
 - latent space z는 구면선형보간법을
 <p align='center'><img src = "https://github.com/Bomin-Seo/Bomin-Seo.github.io/assets/94039896/8bcb4f0a-850c-46fd-8ab9-dd089663b232" height="80%" width = "80%"/></p>
+
 - intermediate latent space $$\omega$$에 대해서는 선형 보간법으로 계산합니다.
-- 임의의 지점 t와 근접한 지점 $$t + \epsilon$$
-#### Linear separabilit
+- 임의의 지점 t와 근접한 지점 $$t + \epsilon$$의 vector차이를 계산하여 급격하게 변화하는지의 여부를 계산합니다.
+- semantic한 정보가 급격하게 변하지 않는다면 disentangle, 급격하게 변화한다면 entangle되어있다고 설명할 수 있습니다.
+<p align='center'><img src = "https://github.com/Bomin-Seo/Bomin-Seo.github.io/assets/94039896/e75ca886-1f14-4ce0-9db0-5be360b9dbfe" height="80%" width = "80%"/></p>
+
+- 위의 결과는 latent vector z와 intermediate latent space $$\omega$$에 대한 Perceptual path length를 확인할 수 있습니다.
+- intermediate latent space $$\omega$$를 통해 mapping을 수행한 결과 disentangle되었음을 확인할 수 있습니다.
+
+#### Linear separability

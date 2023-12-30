@@ -1,8 +1,9 @@
 ---
 layout: single
 title:  "[Paper Review] Generative Adversarial Nets"
-date:   2023-07-17 13:08:52 +0900
-categories: PaperReview
+categories: 
+    - PaperReview
+    - GAN
 author_profile: true
 sidebar:
   nav: "main"
@@ -10,8 +11,9 @@ tags :
     - GAN
     - PaperReview
 ---
-**Paper link : Generative Adversarial Nets**
+<br>
 
+**Paper link : Generative Adversarial Nets**
  <https://arxiv.org/pdf/1406.2661.pdf>
 
 

@@ -14,7 +14,7 @@ tags :
 
  <https://arxiv.org/pdf/1411.1784.pdf>
 
- ###  Conditional Generative Adversarial Nets
+###  Conditional Generative Adversarial Nets
 - cGAN은 GAN모델에 추가적인 정보 y를 input noise $$p_z(z)$$에 결합하여 generator와 discriminator에 입력하며 다음과 같은 식으로 표현합니다.
 <p align='center'><img src = "https://github.com/Bomin-Seo/Bomin-Seo.github.io/assets/94039896/fc9a30eb-6985-4a20-9565-37b38974903e" height="90%" width = "90%"/></p>
 

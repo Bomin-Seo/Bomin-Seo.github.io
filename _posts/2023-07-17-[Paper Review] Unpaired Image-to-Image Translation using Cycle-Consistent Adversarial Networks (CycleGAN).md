@@ -14,7 +14,7 @@ tags :
 
  <https://arxiv.org/pdf/1703.10593.pdf>
 
- ### Introduction
+### Introduction
 - image to image translation은 paired training examples를 이용하여 input image에서 output image로, 하나의 domain에 속하는 이미지를 다른 domain의 이미지로 매핑합니다.
 
 - 이 모델은 다음과 같은 문제점을 가지고 있습니다.
