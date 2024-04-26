@@ -19,7 +19,7 @@ tags :
 
 ### 공간 복잡도 분석
 - in-place sorting algorithm으로 추가적인 저장 장소가 필요하지 않다.
-- 따라서, $$M(n) = \Omega(1)$$
+- 따라서, $$M(n) = \Theta(1)$$
 
 ### 시간 복잡도 분석
 #### Worst Case
