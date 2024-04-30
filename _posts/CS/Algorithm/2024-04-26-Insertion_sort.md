@@ -1,13 +1,12 @@
 ---
 layout: single
-title:  "[TIL] Algorithm - Sorting : Insertion Sort"
+title:  "Algorithm - Sorting : Insertion Sort"
 date:   2024-04-26 13:08:52 +0900
-categories: TIL Algorithm Sorting
+categories: Algorithm Sorting
 author_profile: true
 sidebar:
   nav: "main"
 tags : 
-    - TIL
     - Algorithm
     - Sorting
 ---
@@ -15,6 +14,7 @@ tags :
 - $$O(n^2)$$ 정렬 알고리즘
 - 정렬 범위를 1에서부터 점차적으로 1씩 늘려가며 정렬하는 알고리즘
 - 새로 정렬 범위에 들어온 항목을 이미 정렬되어 있는 배열의 항목과 비교 및 교체를 수행하여 적절한 위치에 끼워넣는 정렬 알고리즘
+- 일정 수준 정렬된 데이터에 대해 빠르게 수행되는 알고리즘
 <p align='center'><img src = "https://github.com/Bomin-Seo/Study/assets/94039896/1d59636f-ab30-4aff-9af5-7514bc79cc90" height="40%" width = "40%"/></p>
 
 ### 공간 복잡도 분석
@@ -22,6 +22,10 @@ tags :
 - 따라서, $$M(n) = \Theta(1)$$
 
 ### 시간 복잡도 분석
+
+#### Case별 시간복잡도
+- Best Case : $$O(n)$$  /   Average Case : $$O(n^2)$$   /   Worst Case : $$O(n^2)$$
+
 #### Worst Case
 - 역순으로 정렬되어 있는 경우
 - ex) 5 4 3 2 1 &rarr; 4 5 3 2 1 &rarr; 3 4 5 2 1 &rarr; 2 3 4 5 1 &rarr; 1 2 3 4 5

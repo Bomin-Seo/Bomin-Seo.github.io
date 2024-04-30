@@ -1,13 +1,12 @@
 ---
 layout: single
-title:  "[TIL] Algorithm 분석"
+title:  "Algorithm 분석"
 date:   2024-04-25 13:08:52 +0900
-categories: TIL Algorithm
+categories: Algorithm
 author_profile: true
 sidebar:
   nav: "main"
 tags : 
-    - TIL
     - Algorithm
 ---
 ## Algorithm
