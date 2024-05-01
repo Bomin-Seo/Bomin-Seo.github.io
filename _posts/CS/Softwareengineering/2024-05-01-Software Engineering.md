@@ -95,7 +95,7 @@ tags :
 -	remote computer에서 동작하고 유저의 PC나 터미널창을 통해 접근 가능한 applications
 -	e-commerce applications, naver, google와 같은 web applications를 포함한다.
 
-<h5 style="color: green;">Embedded control systems/h5>
+<h5 style="color: green;">Embedded control systems</h5>
 
 -	전자제품, 드론, 무인자동차와 같은 하드웨어 장치를 관리하고 제어하는 software system
 -	다른 어떤 유형의 system보다 embedded systems의 수가 더 많다.
