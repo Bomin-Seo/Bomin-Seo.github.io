@@ -26,106 +26,127 @@ tags :
 
 ## Software
 
-<h3 style="color: green;">What is Software?</h3>
+### What is Software?
 - 컴퓨터 프로그램과 그와 관련된 documentation
 - Software products는 특정 고객 혹은 일반 시장을 대상으로 개발된다.
 
-<h3 style="color: green;">Software products</h3>
+### Software products
 
-##### Generic products
+<h5 style="color: green;">Generic products</h5>
 - 구매를 희망하는 불특정 다수에게 판매하는 Stand-alnoe system
 - 필요한 기능과 성능을 개발사에서 정의한다.
 - ex) Graphics program(photoshop 등), Project management tools, CAD Software, MS Office
 
-##### Customized products
+<h5 style="color: green;">Customized products</h5>
+
 - 특정 고객의 요구에 맞추어 개발된 소프트웨어
 - 필요한 기능과 성능을 고객이 정의한다.
 - ex) embedded control system(특정 이론에 기반해 만들어진 원자력 시스템 등), 특정 공항/지하철역에 최적화된 소프트웨어
 
-<h3 style="color: green;">What are the attributes of good software?</h3>
+### What are the attributes of good software?
 
-##### Acceptability
+<h5 style="color: green;">1. Acceptability</h5>
 - 사용자가 원하는 기능을 수행하며 사용가능해야한다.
 - 사용자가 필요한 기능을 필요한 때에 제공가능해야한다.
 - 이해 가능해야하며, 사용자가 사용하는 다른 system과도 양립가능해야한다.
 
-##### Efficiency
+<h5 style="color: green;">2. Efficiency</h5>
+
 - Memory, Processor Cycle과 같은 시스템 자원을 낭비하지 않아야한다.
 - 응답성, Processing time, 메모리 사용률을 포함한다.
 
-##### Dependability and security
+<h5 style="color: green;">3. Dependability and security</h5>
+
 -	신뢰성, 보안, 안정성의 의미를 포함한다.
 -	system failure에 대한 기기적, 경제적 손실을 야기하지 않으며, 해킹에 대한 방어기능 포함한다.
 
-##### Maintainability
+<h5 style="color: green;">4. Maintainability</h5>
+
 -	변경되는 고객의 요구사항도 충족시킬 수 있어야한다.
 
-<h3 style="color: green;">General issues that affect software</h3>
+### General issues that affect software
 
-##### Heterogeneity (다양성)
+<h5 style="color: green;">Heterogeneity (다양성)</h5>
+
 -	다양한 유형의 컴퓨터와 모바일 기기의 출현에 따라 소프트웨어는 다양한 환경에서 구동할 수 있도록 더 커지고, 복잡해지며 다양해진다.
 
-##### Business and social change
+<h5 style="color: green;">Business and social change</h5>
+
 -	시장이나 사회의 변화는 매우 빠르고, 새로운 기술도 사용가능해지기 때문에 이미 만들어졌거나 개발 진행 중인 소프트웨어는 변화에 대응 가능해야 한다.
 
-##### Security and trust
+<h5 style="color: green;">Security and trust</h5>
+
 -	소프트웨어가 컴퓨터 간에서 동작하거나 비즈니스적으로 중대한 사항에 관여하는 등 사람들의 삶에 미치는 영향이 증대되었기 때문에 보안과 신뢰성이 중요해졌다.
 
-##### Scale
+<h5 style="color: green;">Scale</h5>
+
 -	임베디드 시스템에서 데이터센터의 scale까지 다양한 범위의 scale에 맞게 개발되어야한다.
 
 
-<h3 style="color: green;">Application types</h3>
+### Application types
 
-##### Stand-alone applications
+<h5 style="color: green;">Stand-alone applications</h5>
+
 -	local computer에서 동작하는 application
 -	모든 기능을 포함하고 있으며, network에 연결될 필요가 없는 applications
 
-##### Interactive transaction-based applications
+<h5 style="color: green;">Interactive transaction-based applications</h5>
+
 -	remote computer에서 동작하고 유저의 PC나 터미널창을 통해 접근 가능한 applications
 -	e-commerce applications, naver, google와 같은 web applications를 포함한다.
 
-##### Embedded control systems
+<h5 style="color: green;">Embedded control systems/h5>
+
 -	전자제품, 드론, 무인자동차와 같은 하드웨어 장치를 관리하고 제어하는 software system
 -	다른 어떤 유형의 system보다 embedded systems의 수가 더 많다.
 
-##### Batch processing systems
+<h5 style="color: green;">Batch processing systems</h5>
+
 -	batch : 대기하였다가 한번에 순차적으로 처리하는 system 
 -	수많은 입력에 대해 그에 대응되는 응답을 만들 때 사용된다.(금융기관 / 프로그램 통합과정 등)
 
-##### Entertainment systems
+<h5 style="color: green;">Entertainment systems</h5>
+
 -	개인적인 목적이나 유저의 즐거움을 목적으로 개발된 system
 -	Netflix, web-game 등 
 - 지연을 빨리 처리하는 것이 중요하다.
 
-##### Systems for modeling and simulation
+<h5 style="color: green;">Systems for modeling and simulation</h5>
+
 -	과학자나 공학자들이 설계와 시뮬레이션에 사용하는 시스템
 -	상호작용하는 물체나 물리법칙 계산 등에 모델과 시뮬레이션에 사용된다.
 
-##### Data collection systems
+<h5 style="color: green;">Data collection systems</h5>
+
 -	빌딩 관리 등에서처럼 센서로부터 정보를 모아 다른 기능을 수행하는 곳에 사용된다.
 
-##### Systems of systems
+<h5 style="color: green;">Systems of systems</h5>
+
 -	기존에 있는 시스템들을 총괄하는 시스템
 
 ## Software engineering ethics
 
-<h3 style="color: green;">Issue of professional responsibility</h3>
+### Issue of professional responsibility
 
-##### Confidentiality
+<h5 style="color: green;">Confidentiality</h5>
+
 - 공식적인 보안 협의가 없더라도 직원과 고객의 개인정보를 누설해서는 안된다.
 
-##### Competence
+<h5 style="color: green;">Competence</h5>
+
 
 - 본인의 역량에 대해 거짓말을 해서는 안된다.
-##### 지적재산권
+
+<h5 style="color: green;">지적재산권</h5>
+
 - 지적재산권을 엄격히 준수한다.
 
-##### 컴퓨터의 오용
+<h5 style="color: green;">컴퓨터의 오용</h5>
+
 - 회사에서의 컴퓨터를 다른 목적으로 사용해서는 안된다.
 - ex) 본인이 만든 프로그램 삭제 등
 
-<h3 style="color: green;">IACM/IEEE Code of Ethics</h3>
+### IACM/IEEE Code of Ethics
 
 - 소프트웨어 엔지니어는 소프트웨어의 분석, 설계, 개발, 테스트, 유지보수 전반의 일을 유익하고 존중받는 직업적활동으로 만들기 위해 노력하고 공공의 건강, 안전, 복지를 위해 원칙을 준수해야 한다.
   -	소프트웨어 엔지니어는 공공의 이익에 부합하도록 일해야 한다.
