@@ -11,29 +11,31 @@ tags :
 ---
 ## Software Process
 
-<h3 style="color: green;">Structed set of activities</h3>
+### Structed set of activities
 
 - Specification : 소프트웨어가 어떠한 기능과 요구사항을 만족해야하는지에 대해 정의한다.
 - Desing & implementation : 소프트웨어를 설계하고 구현한다.
 - Validation : 고객의 요구사항을 충족하는지 확인한다.
 - Evolution : 사용자의 요구나 시장/사회의 변화, 새로운 기술의 출시에 맞추어 변화한다.
 
-<h3 style="color: green;">Software process descriptions</h3>
+### Software process descriptions
 
 - 프로세스의 설명에는 데이터 모델의 구체적인 정보, 유저 인터페이스의 설계, 이러한 행동이 이루어진 순서에 대한 설명을 포함한다.
 - 프로세스 활동 결과물인 products(코드, 실행파일, 문서, 그림 등)에 대한 설명을 포함한다.
 - 프로세스 참여 인원의 역할을 반영한 Role에 대한 설명을 포함한다.
 - 프로세스 동작의 pre & post condition에 대한 설명을 포함한다.
 
-<h3 style="color: green;">Plan-driven and Agile processes</h3>
+### Plan-driven and Agile processes
 
-##### Plan-driven process
+<h5 style="color: green;">Plan-driven process</h5>
+
 - 프로세스의 모든 활동이 사전에 계획되고 단계가 엄격히 구분되며, 프로세스는 이 계획에 따라 평가된다.
 - 기능이 많지 않아도 보안과 신뢰성이 굉장히 중요한 경우 (원자력 발전소 시스템, 브레이크 시스템 등) \
 혹은 굉장히 많은 인력이 투입되며 여러 부서에서 개발이 이루어지는 큰 프로젝트에서 사용되는 방식.
 - 전자제품, 자동차와 같이 하드웨어에 소프트웨어가 들어가 하나의 결과물로 도출되는 Embedded system에서도 많이 사용되는 방식.
 
-##### Agile Process
+<h5 style="color: green;">Agile Process</h5>
+ 
 - 중요도 순으로 단계적으로 개발하며 상황의 변화에 민감하게 반응한다.
 - Business system, Web services system 등 전체를 구현하기보다 주요한 기능이 필요한 시점에 동작해야하는 소프트웨어에 사용된다.
 - 초기 버전을 출시한 후 시장의 반응, 상황의 변화에 맞추어 보완 및 개발이 진행되는 방식 (Incremental)
