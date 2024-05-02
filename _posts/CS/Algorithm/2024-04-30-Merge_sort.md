@@ -52,12 +52,12 @@ void merge2(index low, index mid, index high) {
 ### 시간 복잡도 분석
 
 #### Case별 시간복잡도
-- Best Case : $$O(n\ln(n))$$  /   Average Case : $$O(n\ln(n))$$   /   Worst Case : $$O(n\ln(n))$$
+- Best Case : $$O(n\log(n))$$  /   Average Case : $$O(n\log(n))$$   /   Worst Case : $$O(n\log(n))$$
 
 #### Every Case
-- Merge sort는 분할과 병합 단계로 나뉘며 분할 단계에서 16 > 8 > 4 > 2 > 1과 같이 반복의 수가 절반으로 줄어들기에 $$O(\ln(n))$$의 시간이 필요하다.
+- Merge sort는 분할과 병합 단계로 나뉘며 분할 단계에서 16 > 8 > 4 > 2 > 1과 같이 반복의 수가 절반으로 줄어들기에 $$O(\log(n))$$의 시간이 필요하다.
 - 병합 단게에서는 모든 값을 비교하기 때문에 $$O(n)$$의 시간이 소모된다.
-- 따라서 총 시간 복잡도는 $$O(n\ln(n))$$이다.
+- 따라서 총 시간 복잡도는 $$O(n\log(n))$$이다.
 
 #### 타 알고리즘과의 비교
 - 정렬이 필요한 요소의 쌍을 역이라고 지칭할 때 (ex. [3,2,4,1,6,5]의 경우 역 = {(3,2),(3,1),(2,1),(4,1),(6,5)}) \
