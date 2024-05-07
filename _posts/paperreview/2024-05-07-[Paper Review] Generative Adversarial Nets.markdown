@@ -85,14 +85,17 @@ tags :
 > - 정보 이론에서 정보량, 무질성의 정도를 나타냅니다.
 > - Entropy는 $$H(P) = -\sum^N_{i=1}E_{P\sim X}[h(x)] = -\sum^N_{i=1}p_ilogp_i$$ (N : Class 개수, $$p_i$$ :발생확률)로 표현되며 entropy의 값이 0에 가까울수록 정보량이 작음을 의미합니다.
 > 예를 들어 모든 경우의 발생 확률이 같은 경우, 즉 불확실성이 큰 경우는 Entropy의 값이 커지며 이 데이터에서 얻을 수 있는 정보량이 큼을 의미합니다.
+
 >#### Cross Entropy
 > - ML/DL에서 알고 있는 실제 데이터의 분포 P와 예측 모델을 통해 구한 데이터의 분포 Q를 이용하여 Entropy를 구하고, 이를 통해 예측 모델이 실제 데이터의 분포와 유사해지도록 학습하는 과정에 사용됩니다.
 > - Cross Entropy는 $$H(P, Q) = -E_{X\sim P}[-logQ(x)] = -\sum_x P(x)logQ(x)$$로 표현됩니다.
+
 >#### KL Divergence
 > - 서로 다른 두 분포의 차이를 측정하는데 사용됩니다.
 > - $$D_{KL}(P||Q) = \sum_x P(x)\log(\frac{P(x)}{Q(x)})$$
 의 식을 통해 두 분포의 차이를 구하게 됩니다.
 > - 식을 $$D_{KL}(P||Q) = -H(P,P) + H(P,Q)$$로 변환할 수 있으며 두 데이터 분포의 정보량, 즉 H(P, Q)는 $$D_{KL}(P||Q) + H(P)$$로 표현할 수 있습니다.
+
 >#### JSD(Jenson-Shanon divergence)
 > - M을 확률 분포 P, Q의 평균이라고 할 때, JSD는 다음과 같이 표현할 수 있습니다.
 > - $$JSD(P||Q) = \frac{1}{2}KL(P||M) + \frac{1}{2}KL(Q||M)$$
