@@ -8,8 +8,8 @@ author_profile: true
 sidebar:
   nav: "main"
 tags : 
-    - GAN
     - PaperReview
+    - GAN
 ---
 <br>
 
@@ -20,7 +20,7 @@ tags :
 ### 1. Introduction
 - GAN모델은 Generator(G, 생성기)와 Discriminator(D, 판별기)의 2개의 네트워크가 적대적으로 학습하며 이미지를 생성합니다.
 - 논문에서 Generator와 Discriminator의 관계를 지폐위조범과 경찰의 관계에 비유합니다. 경찰(Discriminator)는 실제 지폐와 위조 지폐를 잘 구분할 수 있도록 학습되며, 지폐 위조범(Generator)은 경찰(Discriminator)이 생성된 위조 지폐를 실제 지폐라고 판단할 수 있도록 정교하고 사실적으로 만들도록 학습을 진행합니다.
-<p align='center'><img src = "https://github.com/Bomin-Seo/Bomin-Seo.github.io/assets/94039896/b4b452d4-c932-40ee-a65f-43dbfa4f8204" height="50%" width = "50%"/></p>
+<p align='center'><img src = "https://github.com/Bomin-Seo/Bomin-Seo.github.io/assets/94039896/b4b452d4-c932-40ee-a65f-43dbfa4f8204" height="40%" width = "40%"/></p>
 
 ### 2. 다변수 확률 분포
 - image, audio, text 등의 데이터는 데이터 내의 feature를 기저로 삼은 고차원 공간 내에서 한 점으로 표현될 수 있습니다. 
@@ -29,7 +29,9 @@ tags :
 - 고차원 공간에서 한 점으로 표현된 데이터를 근사한 모델은 평균이나 분산과 같은 통계값을 가지게 되며, GAN 모델은 각각의 Class에 대한 데이터의 분포를 학습합니다.
 <p align='center'><img src = "https://github.com/Bomin-Seo/Bomin-Seo.github.io/assets/94039896/ac8fbf23-09ea-4332-8b00-2375b2a7f428" height="50%" width = "50%"/></p>
 
-- 데이터의 통계치를 가장 잘 반영한 분포를 학습한다면 더 좋은 데이터를 생성할 수 있게 되며, GAN Model은 확률이 높은 부분에서 noise를 삽입하며 사실적인 데이터를 생성할 수 있도록 학습이 진행됩니다.
+- Generator는 실제와 유사한 데이터를 생성하고자 하며, 이는 생성되는 데이터가 실제 데이터의 feature를 잘 반영하고 있어야함을 의미합니다.
+- 실제 데이터의 feature에 noise를 삽입하여 생성되는 데이터가 실제 데이터에서 흔히 보이는 형태, 즉 다변수확률분포상의 확률이 높은 지점의 통계치를 반영한다면 더 사실적인 결과물을 생성할 수 있습니다.
+- 따라서 GAN Model의 목적은 학습을 진행하며 실제 데이터의 통계치를 학습하는, 실제 데이터의 분포를 근사하는 모델을 만드는 것입니다.
 
 ### 3. GAN Model
 <p align='center'><img src = "https://github.com/Bomin-Seo/Bomin-Seo.github.io/assets/94039896/2e113653-df44-40da-a3ea-14121d172132" height="70%" width = "70%"/></p>
@@ -54,9 +56,11 @@ tags :
 <p align='center'><img src = "https://github.com/Bomin-Seo/Bomin-Seo.github.io/assets/94039896/0eb45deb-39a4-430e-a620-950079e97c4f" height="90%" width = "90%"/></p>
 
 - 학습 초기(a)에 생성된 데이터의 분포는 실제 데이터의 분포와 차이가 크며 판별기 또한 부분적으로 정확한 판별을 시행합니다.
-- 학습이 진행되며 생성된 데이터의 분포는 실제 데이터의 분포와 유사해지도록 학습되며 학습이 충분히 이루어진 상황(d)에서는 판별기가 실제 데이터와 생성된 데이터를 구분하지 못하는 상태,  D(x) = 0.5의 값이 반환하도록 학습됩니다.
+- 학습이 진행되며(b),(c) 생성된 데이터의 분포는 실제 데이터의 분포와 점차 유사해지도록 학습됩니다.
+- 이상적으로, 학습이 충분히 이루어진 상황(d)에서는 판별기가 실제 데이터와 생성된 데이터를 구분하지 못하는 상태,  D(x) = 0.5의 값이 반환하도록 학습됩니다.
 
 ### 4. 이론적 증명
+
 #### 명제1 : optimal D는 G가 고정되어있을 때, $$D^*_G(x) = \frac{p_{data}(x)}{p_{data}(x) + p_g(x)}$$로 수렴한다.
 - GAN 모델의 목적함수인
 <p align='center'><img src = "https://github.com/Bomin-Seo/Bomin-Seo.github.io/assets/94039896/d70891f5-faed-461a-8ae3-75da5d96adae" height="90%" width = "90%"/></p>
@@ -76,19 +80,20 @@ tags :
 
 #### 명제2 : Global optimum은 $$p_g = p_{data}$$
 - 명제는 두 데이터 분포의 차이와 관련되어 있으며, 두 데이터 분포의 차이를 나타내는 것에는 KL Divergence와 JSD 등이 있습니다. GAN 모델에서는 JSD를 이용하여 명제를 증명합니다.
+
 >#### Entropy
 > - 정보 이론에서 정보량, 무질성의 정도를 나타냅니다.
 > - Entropy는 $$H(P) = -\sum^N_{i=1}E_{P\sim X}[h(x)] = -\sum^N_{i=1}p_ilogp_i$$ (N : Class 개수, $$p_i$$ :발생확률)로 표현되며 entropy의 값이 0에 가까울수록 정보량이 작음을 의미합니다.
 > 예를 들어 모든 경우의 발생 확률이 같은 경우, 즉 불확실성이 큰 경우는 Entropy의 값이 커지며 이 데이터에서 얻을 수 있는 정보량이 큼을 의미합니다.
-> #### Cross Entropy
+>#### Cross Entropy
 > - ML/DL에서 알고 있는 실제 데이터의 분포 P와 예측 모델을 통해 구한 데이터의 분포 Q를 이용하여 Entropy를 구하고, 이를 통해 예측 모델이 실제 데이터의 분포와 유사해지도록 학습하는 과정에 사용됩니다.
 > - Cross Entropy는 $$H(P, Q) = -E_{X\sim P}[-logQ(x)] = -\sum_x P(x)logQ(x)$$로 표현됩니다.
-> #### KL Divergence
+>#### KL Divergence
 > - 서로 다른 두 분포의 차이를 측정하는데 사용됩니다.
 > - $$D_{KL}(P||Q) = \sum_x P(x)\log(\frac{P(x)}{Q(x)})$$
 의 식을 통해 두 분포의 차이를 구하게 됩니다.
 > - 식을 $$D_{KL}(P||Q) = -H(P,P) + H(P,Q)$$로 변환할 수 있으며 두 데이터 분포의 정보량, 즉 H(P, Q)는 $$D_{KL}(P||Q) + H(P)$$로 표현할 수 있습니다.
-> #### JSD(Jenson-Shanon divergence)
+>#### JSD(Jenson-Shanon divergence)
 > - M을 확률 분포 P, Q의 평균이라고 할 때, JSD는 다음과 같이 표현할 수 있습니다.
 > - $$JSD(P||Q) = \frac{1}{2}KL(P||M) + \frac{1}{2}KL(Q||M)$$
 > - M이 P와 Q의 평균값이므로 KL Divergence와는 다르게 대칭적이고, 거리의 개념을 적용할 수 있습니다.
@@ -106,4 +111,3 @@ C(G)는 목적함수를 새롭게 정의한 함수이며 G의 관점에서 목�
 0을 최소값으로 가지게 되면 G와 D의 관점에서 Global optimum을 가지게 됩니다.
 - 따라서 $$D_{JSD}(p_{data}||p_g)$$가 0이 되는 지점, 
 $$p_g = p_{data}$$일 때 GAN모델은 Global optimum을 가지게 됩니다.
-
