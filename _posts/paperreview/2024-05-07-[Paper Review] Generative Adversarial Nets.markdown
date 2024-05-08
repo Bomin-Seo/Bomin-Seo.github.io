@@ -16,6 +16,11 @@ tags :
 **Paper link : Generative Adversarial Nets**
  <https://arxiv.org/pdf/1406.2661.pdf>
 
+ - Config & Generator code
+ <https://bomin-seo.github.io/paperreview/gan/Paper-Review-Generative-Adversarial-Nets-code_generator/>
+
+ - Discriminator & Training code
+ <https://bomin-seo.github.io/paperreview/gan/Paper-Review-Generative-Adversarial-Nets-code_discriminator/>
 
 ### 1. Introduction
 - GAN모델은 Generator(G, 생성기)와 Discriminator(D, 판별기)의 2개의 네트워크가 적대적으로 학습하며 이미지를 생성합니다.

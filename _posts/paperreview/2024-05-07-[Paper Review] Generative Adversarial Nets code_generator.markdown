@@ -16,6 +16,11 @@ tags :
 **Paper link : Generative Adversarial Nets**
  <https://arxiv.org/pdf/1406.2661.pdf>
 
+ - paper review
+ <https://bomin-seo.github.io/paperreview/gan/Paper-Review-Generative-Adversarial-Nets/>
+
+ - Discriminator & Training code
+ <https://bomin-seo.github.io/paperreview/gan/Paper-Review-Generative-Adversarial-Nets-code_discriminator/>
 
 ## Process
 - Framework : Pytorch
