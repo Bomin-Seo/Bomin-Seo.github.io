@@ -111,3 +111,31 @@ large_integer prod2(large_integer u, large_integer v){
 - 식으로 표현하면 $$3W(\frac{2}{2}) + cn <= W(n) <= 3W(\frac{n}{2} + 1) + cn$$으로 표현되며 \
 $$W(n) = 3W(\frac{n}{2}) + cn = 3^2W(\frac{n}{4}) + cn = ... = 3^{k}W(\frac{n}{2^k}) \in \Theta(n^{\log(3)}) \sim \Theta(n^{1.58})$$로 계산됩니다.
 - $$O(n^2)$$과 비교하여 $$\Theta(n^{1.58})$$로 개선된 성능을 얻을 수 있습니다.
+
+##### Python code
+```
+import math
+
+def prod(num1, num2):
+    threshold = 2
+    n = max(len(str(num1)), len(str(num2)))
+    if num1 == 0 or num2 == 0:  # 두 수 중에 0의 값이 있다면 바로 0을 반환합니다
+        return 0
+    elif n <= threshold:
+        # n이 threshold값이 2보다 작을 경우, 즉 num1, num2가 2자리수 이하 일때는
+        # 일반적인 계산방식을 이용하여 값을 반환합니다.
+        return num1 * num2
+    else:
+        m = math.floor(n/2)
+        x = num1 // 10**m
+        y = num1 % 10**m
+        w = num2 // 10**m
+        z = num2 % 10**m
+        # 큰 수인 num1과 num2를 num1 =  x * (10**m) + y 의 방식으로 자릿수를 기준으로 반으로 나눕니다
+        r = prod(x + y, w + z)
+        p = prod(x, w)
+        q = prod(y, z)
+        # 큰 수를 2개로 나눈 것을 기반으로 재귀적으로 호출하며
+        # 곱셈 공식인 (ax + b)(cx + d) = acx2 + (ad + bc)x + bd의 꼴로 값을 반환합니다.
+        return p * 10**(2*m) + (r - p - q) * 10**m + q
+```
