@@ -1,14 +1,16 @@
 ---
 layout: single
 title:  "[Paper Review] Conditional Generative Adversarial Nets"
-date:   2023-07-17 13:08:52 +0900
-categories: PaperReview
+categories: 
+    - PaperReview
+    - GAN
 author_profile: true
 sidebar:
   nav: "main"
 tags : 
-    - GAN
     - PaperReview
+    - GAN
+
 ---
 **Paper link : Conditional Generative Adversarial Nets**
 
