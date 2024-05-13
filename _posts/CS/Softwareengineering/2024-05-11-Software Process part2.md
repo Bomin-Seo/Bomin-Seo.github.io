@@ -1,7 +1,6 @@
 ---
 layout: single
 title:  "Software Engineering : SW Process part2"
-date:   2024-05-01 10:08:52 +0900
 categories: SoftwareEngineering
 author_profile: true
 sidebar:
