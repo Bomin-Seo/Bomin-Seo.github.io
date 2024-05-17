@@ -1,21 +1,26 @@
 ---
 layout: single
 title:  "[Paper Review] Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks (CycleGAN)"
-date:   2023-07-17 13:08:52 +0900
-categories: PaperReview
+categories: 
+    - PaperReview
+    - GAN
 author_profile: true
 sidebar:
   nav: "main"
 tags : 
-    - GAN
     - PaperReview
+    - GAN
 ---
 **Paper link : Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks**
 
  <https://arxiv.org/pdf/1703.10593.pdf>
 
-### Introduction
-- image to image translation은 paired training examples를 이용하여 input image에서 output image로, 하나의 domain에 속하는 이미지를 다른 domain의 이미지로 매핑합니다.
+## Image-to-image Translation
+- 이미지를 입력받아 다른 이미지로 변환하는 과정을 Translation이라고 지칭합니다.
+- Image-to-image Translation은 짝지어진 training samples을 이용하여 input image를 output image로, \
+하나의 domain에 속하는 이미지를 다른 domain의 이미지로 mapping하는 생성모델의 한 분야입니다.
+
+<p align='center'><img src = "https://github.com/Bomin-Seo/Study/assets/94039896/b0c75efb-5e2e-44b9-9163-2a4ac634151a" height="80%" width = "80%"/></p>
 
 - 이 모델은 다음과 같은 문제점을 가지고 있습니다.
    - paired training dataset의 비용이 비싸다.
