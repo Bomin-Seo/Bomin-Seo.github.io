@@ -1,7 +1,6 @@
 ---
 layout: single
-title:  "Software Engineering : SW Process"
-date:   2024-05-01 10:08:52 +0900
+title:  "[Software Engineering] SW Process-1"
 categories: SoftwareEngineering
 author_profile: true
 sidebar:
@@ -31,8 +30,8 @@ tags :
 
 - 프로세스의 모든 활동이 사전에 계획되고 단계가 엄격히 구분되며, 프로세스는 이 계획에 따라 평가됩니다.
 - 기능이 많지 않아도 보안과 신뢰성이 굉장히 중요한 경우 (원자력 발전소 시스템, 브레이크 시스템 등) \
-혹은 굉장히 많은 인력이 투입되며 여러 부서에서 개발이 이루어지는 큰 프로젝트에서 사용되는 방식.
-- 전자제품, 자동차와 같이 하드웨어에 소프트웨어가 들어가 하나의 결과물로 도출되는 Embedded system에서도 많이 사용되는 방식.
+혹은 굉장히 많은 인력이 투입되며 여러 부서에서 개발이 이루어지는 큰 프로젝트에서 사용되는 방식
+- 전자제품, 자동차와 같이 하드웨어에 소프트웨어가 들어가 하나의 결과물로 도출되는 Embedded system에서도 많이 사용되는 방식
 
 <h5 style="color: green;">Agile Process</h5>
  

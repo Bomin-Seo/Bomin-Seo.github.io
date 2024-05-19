@@ -1,7 +1,6 @@
 ---
 layout: single
-title:  "Software Engineering : Introduction"
-date:   2024-05-01 10:08:52 +0900
+title:  "[Software Engineering] Introduction"
 categories: SoftwareEngineering
 author_profile: true
 sidebar:

@@ -15,18 +15,20 @@ tags :
 
  <https://arxiv.org/pdf/1703.10593.pdf>
 
-## Image-to-image Translation
-- 이미지를 입력받아 다른 이미지로 변환하는 과정을 Translation이라고 지칭합니다.
-- Image-to-image Translation은 짝지어진 training samples을 이용하여 input image를 output image로, \
-하나의 domain에 속하는 이미지를 다른 domain의 이미지로 mapping하는 생성모델의 한 분야입니다.
+## Cycle Gan
 
 <p align='center'><img src = "https://github.com/Bomin-Seo/Study/assets/94039896/b0c75efb-5e2e-44b9-9163-2a4ac634151a" height="80%" width = "80%"/></p>
 
-- 이 모델은 다음과 같은 문제점을 가지고 있습니다.
-   - paired training dataset의 비용이 비싸다.
-   - input data와 관계없이 Discriminator를 통과할 수 있는 유사하거나 동일한 데이터를 반복적으로 생산하는 Mode-collapse 문제가 발생한다.
+##### Image-to-image Translation의 문제점
+- paired training dataset의 비용이 비싸다.
+- input data와 관계없이 Discriminator를 통과할 수 있는 유사하거나 동일한 데이터를 반복적으로 생산하는 Mode-collapse 문제가 발생한다.
 
+##### Cycle GAN 제안 모델
+- CycleGAN에서는 위의 문제점을 개선하기 위해 각각 2개의 Generator와 Discriminator를 도입하고, \
+두 domain 사이의 underlying relationship을 학습함으로써 짝지어지지 않은 dataset에 대해서도 학습을 수행하고자 합니다.
+- underlying relationship을 학습하기 위하여 Loss function에 cycle consistent loss를 추가됩니다.
 - CycleGAN은 위의 문제를 해결하기 위하여 각각 2개의 Generator와 Discriminator를 도입하고, 두 domain사이의 underlying relationship을 학습하기 위하여 cycle consistent loss를 도입합니다.
+
 <p align='center'><img src = "https://github.com/Bomin-Seo/Bomin-Seo.github.io/assets/94039896/e4aa48dc-4648-451b-936a-b2603dc1c47b" height="80%" width = "80%"/></p>
 
 ### Formulation
