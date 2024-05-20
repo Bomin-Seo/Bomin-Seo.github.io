@@ -1,12 +1,12 @@
 ---
 layout: single
 title:  "[Software Engineering] Introduction"
-categories: SoftwareEngineering
+categories: 소프트웨어공학
 author_profile: true
 sidebar:
   nav: "main"
 tags : 
-    - SoftwareEngineering
+    - 소프트웨어공학
 ---
 ## Software Engineering
 - 상용 또는 판매를 목적으로 하는 Professional Software 개발에 필요한 이론, 방법, 도구에 관한 학문

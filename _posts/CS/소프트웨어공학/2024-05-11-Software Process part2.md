@@ -1,12 +1,12 @@
 ---
 layout: single
-title:  "Software Engineering : SW Process part2"
-categories: SoftwareEngineering
+title:  "[Software Engineering] SW Process-2"
+categories: 소프트웨어공학
 author_profile: true
 sidebar:
   nav: "main"
 tags : 
-    - SoftwareEngineering
+    - 소프트웨어공학
 ---
 ## The requirements engineering process
 <p align='center'><img src = "https://github.com/Bomin-Seo/project1/assets/94039896/5dcefd00-ff6e-4c9e-9b87-f35e0fb91e32" height="50%" width = "50%"/></p>

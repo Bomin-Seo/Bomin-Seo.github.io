@@ -1,12 +1,12 @@
 ---
 layout: single
 title:  "[Software Engineering] Requirement Engineering"
-categories: SoftwareEngineering
+categories: 소프트웨어공학
 author_profile: true
 sidebar:
   nav: "main"
 tags : 
-    - SoftwareEngineering
+    - 소프트웨어공학
 ---
 
 ## Requirement Engineering
