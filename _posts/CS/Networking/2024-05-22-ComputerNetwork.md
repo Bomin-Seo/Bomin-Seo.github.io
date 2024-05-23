@@ -1,6 +1,7 @@
 ---
 layout: single
 title:  "[Networking] Computer Network"
+date:   2024-05-22 9:00:00 +0900
 categories: Networking
 author_profile: true
 sidebar:

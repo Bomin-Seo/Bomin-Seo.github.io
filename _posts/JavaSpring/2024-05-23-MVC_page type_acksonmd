@@ -1,0 +1,151 @@
+---
+layout: single
+title:  "[JavaSpring] MVC/page 유형/Jackson"
+date:   2024-05-23 9:00:00 +0900
+categories: JavaSpring
+author_profile: true
+sidebar:
+  nav: "main"
+tags : 
+    - JavaSpring
+---
+
+## MVC Pattern
+
+- 애플리케이션을 3가지 주요 구성요소인 Model, View, Controller로 분리하여 설계하는 방법입니다.
+- 애플리케이션의 구조를 명확히 하고 유지보수를 용이하게 하며, 코드의 재사용성을 높일 수 있습니다.
+
+<p align='center'><img src = "https://github.com/Bomin-Seo/project1/assets/94039896/7c32a074-af6d-4165-af32-8de35614298e" height="40%" width = "40%"/></p>
+
+##### Model
+- 애플리케이션의 데이터와 비즈니스 로직을 담당합니다.
+- 데이터베이스와 상호작용하여 데이터를 가져오고 저장합니다.
+- 데이터의 상태를 저장하고 관리합니다.
+- View와 Controller와 독립적으로 저장하며, 데이터변경사항이 발생하면 이를 알리는 역할을 수행합니다.
+
+##### View
+- 사용자 인터페이스를 담당합니다.
+- 모델의 데이터를 이용하여 사용자에게 정보를 표시합니다.
+- 사용자가 입력한 정보를 받아 Controller로 전달합니다.
+- 데이터의 표현과 레이아웃을 정의합니다.
+- 모델이 변경되면 이를 반영하여 사용자에게 최신 정보를 보여줍니다.
+
+##### Controller
+- 사용자 입력을 처리합니다.
+- 모델과 뷰 사이에서 중재자 역할을 합니다.
+- 사용자의 요청을 받아 모델을 업데이트하고, 그 결과를 뷰에 반영합니다.
+- 애플리케이션의 흐름을 제어합니다.
+
+## Spring MVC
+- Servelt API를 기반으로 HTTP 요청을 처리하는 모듈이 중앙에 위치하며 이는 Front Controller 패턴으로 설계되어있습니다.
+- Servlet은 클라이언트의 요청을 처리하여 웹페이지를 동적으로 생성하는 서버측 프로그램 또는 그 사양을 의미합니다.
+- Spring boot에는 Apache Tomcat이 기본 내장되어 있으며, Servlet을 웹 애플리케이션으로 실행할 수 있도록 하는 Servlet container의 일종입니다.
+
+<p align='center'><img src = "https://github.com/Bomin-Seo/project1/assets/94039896/126a6c55-8062-4ae6-b385-e78c3d2524f6" height="60%" width = "60%"/></p>
+
+##### 동작 방식
+
+<p align='center'><img src = "https://github.com/Bomin-Seo/project1/assets/94039896/a1480885-08f0-40be-857b-742572a27c37" height="60%" width = "60%"/></p>
+
+- client로부터 HTTP 요청이 들어오면 HttpServlet을 상속받은 DispatcherServlet 객체가 요청을 분석합니다.
+- 분석된 데이터를 토대로 handler mapping(handler 조회, adpater 조희 및 실행)을 통해 Controller를 찾아 요청을 전달합니다.
+
+```
+GET /api/hello  // HelloController 의 hello() 함수
+GET /user/login  // UserController 의 login() 함수
+// path는 동일해도 되나 method는 달라야합니다.
+
+@Controller
+@RequestMapping("/user")
+public class UserController {
+	@GetMapping("/login")
+	public String login() {
+	    // ...
+	}
+  @GetMapping("/logout")
+  public String logout() {
+      // ...
+  }
+}
+```
+
+- 해당 Controller는 요청에 대한 처리를 완료 후 handler adapter를 통해 Model과 View를 DispatherServlet에 전달합니다.
+- 전달된 view는 view resolver를 호출하여 view 이름에 해당하는 실제 view를 찾고 이를 통해 최종 HTML을 생성하여 다시 반환된 후 Cliet에게 전달됩니다.
+  - view 이름은 template폴더 내의 html의 이름입니다. 
+- model 데이터는 view 템플릿에 binding되어 사용자에게 렌더링됩니다.
+
+## 정적 페이지와 동적 페이지
+
+<p align='center'><img src = "https://github.com/Bomin-Seo/project1/assets/94039896/729be8ad-5d14-4674-bd10-914cdbcf2f1e" height="80%" width = "80%"/></p>
+
+##### 정적페이지
+- thymeleaf를 사용하지 않는 경우 path를 입력하여 정적페이지에 접근할 수 있습니다.
+- thymeleaf를 사용하는 경우 static이 아닌 template 내에서 동적 페이지의 view를 검색합니다. 이 경우에는 URL에 html이 포함된 주소를 입력하여 직접 접근할 수 있습니다.
+- 다른 방법으로는 redirect를 이용하여 정적 페이지에 접근할 수 있습니다.
+
+```
+@GetMapping("/html/redirect")
+public String htmlStatic() {
+    return "redirect:/hello.html";
+}
+```
+- 정적페이지를 브라우저에서 바로 접근하지 못하게 하거나 특정 상황에 Controller를 통해 제어하고자 하는 경우 static 폴더가 아닌 templates 폴더에 넣어 실행할 수 있습니다.
+- @Controller안에서 정적 페이지는 .html을 생략한 이름으로 반환하면 정적페이지로 접근할 수 있습니다.
+
+##### 동적페이지
+- Client의 요청을 Controller에서 Model로 처리합니다.
+- Template engine에 View(동적 html 파일)와 Model(View에 적용할 정보들)을 전달합니다.
+- template engine에서 View에 Model을 적용하여 동적 웹페이지를 생성합니다.
+
+```
+private static long visitCount = 0;
+
+@GetMapping("/html/dynamic")
+public String htmlDynamic(Model model) {
+    visitCount++;
+    model.addAttribute("visits", visitCount); // attributeName, attribute
+    return "hello-visit";
+}
+
+// hello-visit.html
+<div>
+  (방문자 수: <span th:text="${visits}"></span>)
+</div>
+```
+
+## Jackson
+- Object를 JSON타입의 String으로 변환해줄 수 있습니다.
+- JSON타입의 String을 Object로 변환해줄 수 있습니다.
+
+##### Object To JSON
+
+```
+void test1() throws JsonProcessingException {
+    Star star = new Star("Robbie", 95);
+
+    ObjectMapper objectMapper = new ObjectMapper(); // Jackson 라이브러리의 ObjectMapper
+    String json = objectMapper.writeValueAsString(star);
+
+    System.out.println("json = " + json);
+}
+```
+
+- objectMapper의 writeValueAsString 메서드에 Parameter로 JSON으로 변환할 Object 객체를 입력합니다.
+- object를 JSON타입의 String으로 변환하기 위해서는 해당 Object에 get method가 필요합니다.
+
+##### JSON To Object
+
+```
+void test2() throws JsonProcessingException {
+    String json = "{\"name\":\"Robbie\",\"age\":95}"; // JSON 타입의 String
+
+    ObjectMapper objectMapper = new ObjectMapper(); // Jackson 라이브러리의 ObjectMapper
+
+    Star star = objectMapper.readValue(json, Star.class);
+    System.out.println("star.getName() = " + star.getName());
+}
+```
+
+- objectMapper의 readValue 메서드를 사용하여 변환할 수 있습니다.
+    - 첫 번째 파라미터는 JSON타입의 String, 두 번째 파라미터에는 변환할 Object의 class 타입을 주면됩니다.
+- JSON타입의 String을 Object로 변환하기 위해서는 해당 Object에 기본 생성자와 get 혹은 set 메서드가 필요합니다.
