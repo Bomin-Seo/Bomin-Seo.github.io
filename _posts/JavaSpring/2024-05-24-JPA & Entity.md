@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "JPA / Entity / Persistence / transaction"
+title:  "[JavaSpring] JPA / Entity / Persistence / transaction"
 date:   2024-05-24 09:10:00 +0900
 categories: JavaSpring
 author_profile: true
