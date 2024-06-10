@@ -92,4 +92,20 @@ tags :
 
 <p align='center'><img src = "https://github.com/Bomin-Seo/project1/assets/94039896/6811ebb5-b8ef-43d5-bdd4-8863f2af9a44" height="60%" width = "60%"/></p>
 
+<p align='center'><img src = "https://github.com/Bomin-Seo/project1/assets/94039896/099abac8-07a0-40d7-9dc6-b9126e733f24" height="60%" width = "60%"/></p>
+
+- 송신 측에서 RTS를 보내어 송신 가능여부를 확인하고 수신 측에서는 CTS를 보내어 전송 시작을 알립니다.
+- 데이터의 송수신이 완료되면 ACK를 전파합니다.
+- Hidden station problem 해결을 위해 CTS와 ACK를 모든 Station에 전파합니다.
+- NAV는 통신하지 않는 Station이 통신을 하지 못하는 구간을 의미합니다.
+
+##### Hidden station problem
+
+<p align='center'><img src = "https://github.com/Bomin-Seo/project1/assets/94039896/72a2ac58-6781-43d0-9613-a8291b90bfc4" height="30%" width = "30%"/></p>
+
+##### Contention window
+
 <p align='center'><img src = "https://github.com/Bomin-Seo/project1/assets/94039896/1b39b52c-692b-4c60-bb97-df0dcae4926f" height="60%" width = "60%"/></p>
+
+- CMSA/CA 방식을 사용하는 무선 LAN에서 공유 매체가 사용가능함을 알고 난 후에도 일정시간(IFS)를 대기 후, 그 시점부터 임의 대기하게 되는 슬롯 단위로 구분된 시간 범위를 나타냅니다.
+- 칸 사이사이에는 CTS, ACK 등을 담습니다.
