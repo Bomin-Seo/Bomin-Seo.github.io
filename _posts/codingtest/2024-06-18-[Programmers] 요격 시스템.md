@@ -81,7 +81,7 @@ def solution(targets):
 
 ## Code
 
-```
+```python
 def solution(picks, minerals):
     answer = 0
     if len(minerals) > sum(picks) * 5:
