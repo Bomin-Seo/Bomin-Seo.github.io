@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "[Paper Review] A Style-Based Generator Architecture for Generative Adversarial Networks"
-date:   2023-07-18 17:08:52 +0900
+date:   2024-07-08 09:00:00 +0900
 categories: PaperReview
 author_profile: true
 sidebar:
