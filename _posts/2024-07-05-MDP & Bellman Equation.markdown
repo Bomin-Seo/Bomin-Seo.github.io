@@ -10,7 +10,7 @@ tags :
     - Reinforcement Learning
 ---
 
-### 1. Reinforcement Learning
+## Reinforcement Learning
 - 강화학습은 어떠한 학습 목표를 가지는 학습 모델이라도, 누적 보상의 최대화를 통해 최적화할 수 있다는 **reward hypothesis**에 근거합니다.
 - 주어진 환경(Environment)에서 특정 목표를 달성하기 위해 행동하는 주체를 **Agent**라 지칭하며, 각 step t에서 agent는 Environment 관찰을 통해 **Action**을 결정합니다.
 - 각 step t에서 action이 얼마나 좋은지 혹은 나쁜지를 평가하여 scalar feedback signal인 **reward**를 반환하며, 강화학습은 cumulative reward(return)의 최대화를 목표로 합니다.
